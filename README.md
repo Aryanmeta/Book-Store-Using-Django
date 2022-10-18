@@ -11,7 +11,3 @@ Create a Book-Store With Django
 <br>
 5 - Now test your project => python manage.py runserver
 <br>
-6 - Create a accounts App => python manage.py startapp accounts
-<br>
-7 - Now install accounts app in 'config/settings.py/' INSTALLED_APPS => 'accounts',
-<br>
