@@ -2,7 +2,7 @@
 {% block title %}لیست کتابها{% endblock title%}
 {% block body %}
     {% for book in books %}
-        <h2>{{ book.title }}</h2>
+        <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
         <h6>{{ book.author }}</h6>
         <p>{{ book.description | truncatewords:30 }}</p>
     {% endfor %}
