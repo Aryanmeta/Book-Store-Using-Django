@@ -4,10 +4,11 @@
     <title>Log In</title>
 {% endblock title %}
 {% block body %}
-    <h2>Log In Page</h2>
+    <h2>Login</h2>
     <form action="" method="post">
         {% csrf_token %}
         {{ form | crispy }}
         <button class="btn btn-success mt-3" type="submit">Log In</button>
     </form>
+    <p><a href="{% url 'password_reset' %}">Forgot Password!?</a> | <a href="{% url 'signup' %}">Dont have account?</a></p>
 {% endblock body %}
