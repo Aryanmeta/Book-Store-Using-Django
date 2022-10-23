@@ -1,10 +1,36 @@
 {% extends '_base.html' %}
-{% block title %}لیست کتابها{% endblock title%}
+{% block title %}لیست کتاب ها{% endblock title %}
 {% block body %}
-    {% for book in books %}
-        <h2><a href="{{ book.get_absolute_url }}">{{ book.title | capfirst }}</a></h2>
-        <h6>{{ book.author | capfirst }}</h6>
-        <p>{{ book.description | truncatewords:30 | capfirst }}</p>
-    {% endfor %}
+    <div class="container mt-4">
+        <div class="row flex-row-reverse justify-content-md-center">
+            <div class="card m-2" style="max-width: 45%">
+                <div class="row g-0 h-100" dir="rtl">
+                    <div class="col-md-4">
+                        <img src="https://newcdn.fidibo.com/images/books/69249_94233_normal.jpg"
+                             class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8 h-100">
+                        <div class="d-flex flex-column justify-content-between h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>اثر مرکب</strong></h3>
+                                <p class="card-text pt-3">امروزه کتاب‌های موفقیت بسیار زیادی به انتشار رسیده است و در
+                                    شبکه‌های مجازی و رسانه‌های مختلف افراد بسیاری هستند که رمز و رازهای موفقیت را به ما
+                                    ارائه می‌کنند. شاید بتوان گفت استراتژی‌های موفقیت دیگر یک راز نیستند و بسیاری از
+                                    افراد از آنها مطلع هستند. اما علت چیس</p>
+                                <p class="text-muted">نویسنده: دارن هاردی</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center bg-grey">
+            <p>دوره آموزشی جنگو <a class="text-dark" href="https://codingyar.com/" target="_blank">کدینگ یار</a></p>
+        </div>
+    </footer>
+
     <p><a href="{% url 'book_create' %}">اضافه کردن کتاب جدید</a></p>
 {% endblock body %}
