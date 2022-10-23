@@ -1,10 +1,10 @@
 {% extends '_base.html' %}
-{% block title %}جزئیات کتاب {{ book.title }}{% endblock title%}
+{% block title %}جزئیات کتاب {{ book.title | capfirst  }}{% endblock title%}
 {% block body %}
-    <h1>{{ book.title }}</h1>
-    <p>{{ book.author }}</p>
+    <h1>{{ book.title | capfirst }}</h1>
+    <p>{{ book.author | capfirst }}</p>
     <p>{{ book.price }}</p>
-    <p>{{ book.description | linebreaks }}</p>
+    <p>{{ book.description | capfirst | linebreaks }}</p>
     <a href="{% url 'book_update' book.id %}"><button class="btn btn-warning mt-3" type="button">ویرایش</button></a>
     <a href="{% url 'book_delete' book.id %}"><button class="btn btn-danger mt-3" type="button">حذف</button></a>
     <br><br>
