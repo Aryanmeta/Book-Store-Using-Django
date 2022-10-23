@@ -6,4 +6,5 @@
         <h6>{{ book.author }}</h6>
         <p>{{ book.description | truncatewords:30 }}</p>
     {% endfor %}
+    <p><a href="{% url 'book_create' %}">اضافه کردن کتاب جدید</a></p>
 {% endblock body %}
