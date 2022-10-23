@@ -123,7 +123,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -140,3 +139,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Email Config
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# static files config
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
