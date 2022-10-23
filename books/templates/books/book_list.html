@@ -2,27 +2,28 @@
 {% block title %}لیست کتاب ها{% endblock title %}
 {% block body %}
     <div class="container mt-4">
-        <div class="row flex-row-reverse justify-content-md-center">
-            <div class="card m-2" style="max-width: 45%">
-                <div class="row g-0 h-100" dir="rtl">
-                    <div class="col-md-4">
-                        <img src="https://newcdn.fidibo.com/images/books/69249_94233_normal.jpg"
-                             class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8 h-100">
-                        <div class="d-flex flex-column justify-content-between h-100">
-                            <div class="card-body">
-                                <h3 class="card-title"><strong>اثر مرکب</strong></h3>
-                                <p class="card-text pt-3">امروزه کتاب‌های موفقیت بسیار زیادی به انتشار رسیده است و در
-                                    شبکه‌های مجازی و رسانه‌های مختلف افراد بسیاری هستند که رمز و رازهای موفقیت را به ما
-                                    ارائه می‌کنند. شاید بتوان گفت استراتژی‌های موفقیت دیگر یک راز نیستند و بسیاری از
-                                    افراد از آنها مطلع هستند. اما علت چیس</p>
-                                <p class="text-muted">نویسنده: دارن هاردی</p>
+        <div class="row flex-row-reverse justify-content-md-right">
+            {% for book in books %}
+                <div class="card m-2" style="max-width: 45%">
+                    <div class="row g-0 h-100" dir="rtl">
+                        <div class="col-md-4">
+                            <img src="https://newcdn.fidibo.com/images/books/69249_94233_normal.jpg"
+                                 class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8 h-100">
+                            <div class="d-flex flex-column justify-content-between h-100">
+                                <div class="card-body">
+                                    <a href="{{ book.get_absolute_url }}"><h4 class="card-title">
+                                        <strong>{{ book.title | capfirst }}</strong></h4></a>
+                                    <p class="card-text pt-3">{{ book.description | capfirst | truncatewords:35 }}</p>
+                                    <p class="text-muted">نویسنده: {{ book.author | capfirst }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
+
         </div>
     </div>
 
