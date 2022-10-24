@@ -13,7 +13,7 @@
                         <div class="col-md-8 h-100">
                             <div class="d-flex flex-column justify-content-between h-100">
                                 <div class="card-body">
-                                    <a href="{{ book.get_absolute_url }}"><h4 class="card-title">
+                                    <a class="text-decoration-none" href="{{ book.get_absolute_url }}"><h4 class="card-title">
                                         <strong>{{ book.title | capfirst }}</strong></h4></a>
                                     <p class="card-text pt-3">{{ book.description | capfirst | truncatewords:35 }}</p>
                                     <p class="text-muted">نویسنده: {{ book.author | capfirst }}</p>

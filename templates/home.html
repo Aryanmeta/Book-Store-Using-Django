@@ -2,10 +2,10 @@
 {% block title %}Home Page{% endblock title %}
 
 {% block body %}
-    <h1>Home Page</h1>
-    {% if user.is_authenticated %}
-        Welcome <b>{{ user.username }}</b> | <a href="{% url 'logout' %}">Log Out</a>
-    {% else %}
-        <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>
-    {% endif %}
+    <h2 class="mt-3">Home Page</h2>
+{#    {% if user.is_authenticated %}#}
+{#        Welcome <b>{{ user.username }}</b> | <a href="{% url 'logout' %}">Log Out</a>#}
+{#    {% else %}#}
+{#        <a href="{% url 'login' %}">Log In</a> | <a href="{% url 'signup' %}">Sign Up</a>#}
+{#    {% endif %}#}
 {% endblock body %}
