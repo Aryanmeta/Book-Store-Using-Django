@@ -1,6 +1,7 @@
 {% extends '_base.html' %}
 {% block title %}لیست کتاب ها{% endblock title %}
 {% block body %}
+
     <div class="container mt-4">
         <div class="row flex-row-reverse justify-content-md-right">
             {% for book in books %}
@@ -26,9 +27,9 @@
                     </div>
                 </div>
             {% endfor %}
-
         </div>
     </div>
+
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
@@ -49,11 +50,6 @@
             {% endif %}
         </ul>
     </nav>
-    <footer class="bg-light text-center text-lg-start mt-5">
-        <div class="text-center bg-grey">
-            <p>دوره آموزشی جنگو <a class="text-dark" href="https://codingyar.com/" target="_blank">کدینگ یار</a></p>
-        </div>
-    </footer>
 
     <p><a href="{% url 'book_create' %}">اضافه کردن کتاب جدید</a></p>
 {% endblock body %}
