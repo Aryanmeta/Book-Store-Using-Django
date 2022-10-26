@@ -1,6 +1,7 @@
 from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, render
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Book
 from .forms import CommentForm
@@ -40,7 +41,7 @@ def BookDetailView(request, pk):
                                                       })
 
 
-class BookCreateView(generic.CreateView):
+class BookCreateView(LoginRequiredMixin, generic.CreateView):
     model = Book
     fields = ('title', 'author', 'description', 'price', 'cover', )
     template_name = 'books/book_create.html'
