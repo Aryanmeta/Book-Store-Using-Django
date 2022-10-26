@@ -19,12 +19,13 @@
                             <h1>{{ book.title | capfirst }}</h1>
                             <h5 class="small my-1"><span class="text-muted">نویسنده: </span>{{ book.author | capfirst }}
                             </h5>
-                            <h5 class="small my-1"><span class="text-muted">ایجاد: </span>{{ book.user.username | capfirst }}
+                            <h5 class="small my-1"><span
+                                    class="text-muted">ایجاد: </span>{{ book.user.username | capfirst }}
                             </h5>
                         </div>
                         <div class="col-xs-12 col-md-3 d-flex flex-column">
                             <h3 class="align-self-center pt-2 text-muted align-self-md-end">
-                                قیمت :  $ {{ book.price }}
+                                قیمت : $ {{ book.price }}
                             </h3>
                         </div>
                     </div>
@@ -39,14 +40,13 @@
                     <div class="card shadow my-3 p-5 w-sm-75 w-100">
                         <div class="mb-3">
                             {% if book.user == user %}
-
-                            <a href="{% url 'book_update' book.id %}">
-                                <button class="btn btn-warning mt-3" type="button">ویرایش</button>
-                            </a>
-                            <br>
-                            <a href="{% url 'book_delete' book.id %}">
-                                <button class="btn btn-danger mt-3" type="button">حذف</button>
-                            </a>
+                                <a href="{% url 'book_update' book.id %}">
+                                    <button class="btn btn-warning mt-3" type="button">ویرایش</button>
+                                </a>
+                                <br>
+                                <a href="{% url 'book_delete' book.id %}">
+                                    <button class="btn btn-danger mt-3" type="button">حذف</button>
+                                </a>
                             {% endif %}
                             <br>
                             <a href="{% url 'book_list' %}">
