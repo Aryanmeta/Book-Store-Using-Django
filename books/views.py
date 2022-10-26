@@ -2,6 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from .models import Book
 from .forms import CommentForm
@@ -17,7 +18,7 @@ class BookListView(generic.ListView):
 # class BookDetailView(generic.DetailView):
 #     model = Book
 #     template_name = 'books/book_detail.html'
-
+@login_required
 def BookDetailView(request, pk):
     # get book object
     book = get_object_or_404(Book, pk=pk)
