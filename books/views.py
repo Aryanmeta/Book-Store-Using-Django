@@ -53,7 +53,7 @@ class BookUpdateView(LoginRequiredMixin, generic.UpdateView):
     template_name = 'books/book_update.html'
 
 
-class BookDeleteView(generic.DeleteView):
+class BookDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Book
     template_name = 'books/book_delete.html'
     success_url = reverse_lazy('book_list')
