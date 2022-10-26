@@ -19,6 +19,8 @@
                             <h1>{{ book.title | capfirst }}</h1>
                             <h5 class="small my-1"><span class="text-muted">نویسنده: </span>{{ book.author | capfirst }}
                             </h5>
+                            <h5 class="small my-1"><span class="text-muted">ایجاد: </span>{{ book.user.username | capfirst }}
+                            </h5>
                         </div>
                         <div class="col-xs-12 col-md-3 d-flex flex-column">
                             <h3 class="align-self-center pt-2 text-muted align-self-md-end">
