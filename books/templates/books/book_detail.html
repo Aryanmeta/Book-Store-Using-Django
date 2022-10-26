@@ -54,13 +54,19 @@
                 <div class="d-flex justify-content-center">
                     <div class="card shadow my-3 p-5 w-sm-75 w-100">
                         <h2 class="mb-5">نظرات:</h2>
-                        <div class="border-bottom mb-3">
-                            {% for comment in comments %}
-                                <h5 class="mb-3">{{ comment.user.username | capfirst}}</h5>
-                                <p>{{ comment.text | linebreaks | capfirst}}</p>
+                        {% for comment in comments %}
+                            {% if comment.is_active %}
+                                <div class="border-bottom mb-3">
+                                    <h5 class="mb-3">{{ comment.user.username | capfirst }}</h5>
+                                    {% if comment.recommend %}
+                                        <p>این کتاب را توصیه می کنم</p>
+                                    {% else %}
+                                        <p>این کتاب را توصیه نمی کنم</p>
+                                    {% endif %}
+                                    <p>{{ comment.text | linebreaks | capfirst }}</p>
                                 </div>
-                            {% endfor %}
-
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
 
