@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}جزئیات کتاب {{ book.title | capfirst }}{% endblock title %}
 {% block body %}
     <div class="container mt-5" dir="rtl">
@@ -67,20 +68,9 @@
                     <div class="card shadow my-3 p-5 w-sm-75 w-100">
                         <h3>نظر خود را وارد کنید:</h3>
                         <form method="POST">
-                            <div class="form-group py-2">
-                                <label class="py-1" for="author_name">نام شما:</label>
-                                <input type="text" class="form-control" placeholder="علی علوی" name="author_name">
-                            </div>
-                            <div class="form-group py-2">
-                                <label class="py-1" for="email">ایمیل شما:</label>
-                                <input type="email" class="form-control" placeholder="example@gmail.com" name="email">
-                            </div>
-                            <div class="form-group py-2">
-                                <label class="py-1" for="comment_text">متن نظر:</label>
-                                <textarea class="form-control" name="text" rows="3"
-                                          placeholder="نظر خود را اینجا وارد کنید."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">ارسال</button>
+                            {% csrf_token %}
+                            {{ comment_form | crispy }}
+                            <button type="submit" class="btn btn-primary mt-3">ارسال</button>
                         </form>
                     </div>
                 </div>
