@@ -38,6 +38,8 @@
                 <div class="d-flex justify-content-center">
                     <div class="card shadow my-3 p-5 w-sm-75 w-100">
                         <div class="mb-3">
+                            {% if book.user == user %}
+
                             <a href="{% url 'book_update' book.id %}">
                                 <button class="btn btn-warning mt-3" type="button">ویرایش</button>
                             </a>
@@ -45,6 +47,7 @@
                             <a href="{% url 'book_delete' book.id %}">
                                 <button class="btn btn-danger mt-3" type="button">حذف</button>
                             </a>
+                            {% endif %}
                             <br>
                             <a href="{% url 'book_list' %}">
                                 <button class="btn btn-info mt-3" type="button">لیست همه کتاب ها</button>
