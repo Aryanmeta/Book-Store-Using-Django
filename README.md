@@ -1,9 +1,9 @@
 # Book-Store-Whit-Django
 Create a Book-Store With Django
 
-1 - Create a Virtual Envirenment in project Directory => python -m venv venv
+1 - Create a Virtual Environment in project Directory => python -m venv venv
 <br>
-2 - Active Virtual Envirenment => .\venv\Scripts\activate
+2 - Active Virtual Environment => .\venv\Scripts\activate
 <br>
 3 - Install Django in project => pip install django
 <br>
