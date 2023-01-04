@@ -5,9 +5,9 @@ Create a Book-Store With Django
 <br>
 2 - Active Virtual Environment => .\venv\Scripts\activate
 <br>
-3 - Install Django in project => pip install django
+3 - makemigrations & migrate => python manage.py makemigrations & python manage.py migrate
 <br>
-4 - Create a config file => django-admin startproject config .
+4 - Create a super user => python manage.py createsuperuser
 <br>
 5 - Now test your project => python manage.py runserver
 <br>
