@@ -1,4 +1,4 @@
-# Book store using Django
+# Book Store Using Django
 Create a Book-Store
 <br>
 1 - Create a Virtual Environment in project Directory => python -m venv venv
